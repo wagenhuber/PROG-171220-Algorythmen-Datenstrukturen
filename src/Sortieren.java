@@ -3,8 +3,9 @@ public class Sortieren {
     //Werte für Beipiel an Tafel: 18 / 3 / 42 / 28 / 42 / 8
 
     /**
-     * Selection Sort:
+     * Selection Sort (mit Minimum-Suche):
      * Hole jeweils das kleinste Element nach vorn:
+     * Nutzt die Minimum-Suche!
      */
 //Wichtig für Abschlussprüfung - Kodieren + Bestimmung Laufzeit
     public static void selectionSort(int[] array) {
@@ -64,45 +65,82 @@ public class Sortieren {
     //Konstant, nicht abhängig von der Länge des Arrays => O(1)
 
 
+
+
+
+    /**Insertion-Sort
+     * Sortiere die jeweils nächste Zahl ein
+     */
+
+    //Werte für Beipiel an Tafel: 5 / 7 / 0 / 3 / 2 / 4
+
+    public static void insertionSort(int[] a) {
+        int i;
+        int j;
+        int t;
+
+        for (i = 1; i < a.length; i++){
+            j = i;
+            t = a[j];
+            while (j > 0 && a[j] > t){
+                j--;
+            }
+            a[j] = t;
+        }
+    }
+    //Analyse Laufzeit:
+    //Best Case: O(n)
+    //Average Case: O(n²)
+    //Worst Case: O(n²)
+
+
+    //#####Bessere Sortieralgorythmen############
+
+
     /**Paradigma: Divide an Conquer (Teile und Behersche / Zusammensetzen)
-     * 1) Aufteilen eines Problems in Teilprobleme
-     * 2) Lösen (Beherschen) der Teilprobleme => Teillösungen
-     * 3) Zusammensetzen (Combine) der Teillösungen zur Gesamtlösung
+     * 1) Aufteilen eines Problems in Teilprobleme (unsortierte Teilfolgen)
+     * 2) Lösen (Beherschen) der Teilprobleme => Teillösungen (sortierte Teilsorgen)
+     * 3) Zusammensetzen (Combine) der Teillösungen zur Gesamtlösung (sortierte Teilfolgen zu Gesamtfolge zusammensetzen)
      * Meist mit Rekursion
      */
 
-/**MergeSort (Merge = Zusammensetzen)
- * 1) Aufteilen des Array in neue, kleinere Arrays
- * 2) Sortieren der Teil-Arrays: MergeSort
- * 3) Zusammensetzen der sortierenten Arrays zu einem neuem Array
- */
+    /**MergeSort (Merge = Zusammensetzen)
+     * 1) Aufteilen des Array in neue, kleinere Arrays
+     * 2) Sortieren der Teil-Arrays und übergabe an MergeSort
+     * 3) Zusammensetzen der sortierenten Arrays zu einem neuem Array
+     */
 
 
 
 //Schritt 2
 
-public static int[] sort(int[] a){
-    int l = a.length / 2;
-    if(l == 0){
-        return a;
-    }
-    int[] b = new int[l];
-    int[] c = new int[a.length - l];
-    for(int i = 0; i < b.length; i++){
-        b[i] = a[i];
-    }
-    for(int i = l; i < a.length; i++ ){
-        c[i - l] = a[i];
-    }
-    return merge(sort(b), sort(c));
+    public static int[] sort(int[] a){
+        int l = a.length / 2;
+        if(l == 0){
+            return a;
+        }
+        int[] b = new int[l];
+        int[] c = new int[a.length - l];
+        for(int i = 0; i < b.length; i++){
+            b[i] = a[i];
+        }
+        for(int i = l; i < a.length; i++ ){
+            c[i - l] = a[i];
+        }
+        return merge(sort(b), sort(c));
 
-}
+    }
 
     //Analyse Laufzeit:
-    //alle Fälle O(n * log n)
+    //alle Fälle O(n * log n) -> schnellste Sortierfunktion überhaupt!! ->  < (kleiner als) O(n²)
 
     //Analyse Speicher:
-    //zusätzlicher Platz O(n)
+    //zusätzlicher Platz O(n) -> hoher Speicherbedarf! -> sortieren von 1000 Werten -> Platzbedarf im Speicher für 2000 Werte!
+
+    //Anmerkung:
+    //Unterscheidung bei Sortieralgorythmen nach "stabil" vs. "nicht stabil"
+    //Stabil: Reihenfolge von Dupletten bleibt erhalten
+    //Nicht Stabil: Reihenfolge bleibt nicht erhalten! -> z.B. bei MergeSort!!!
 
 
 //Schritt 3 MergeSort:
@@ -133,6 +171,17 @@ public static int[] sort(int[] a){
 
 //Analyse Laufzeit:
     //alle Fälle O(n)
+
+
+
+
+    /**QuickSort
+     * 1) Aufteilen des Array anhand eines Pivot-Element (Wert in der Mitte)
+     * 2) Werte im Vergleich zum Pivot-Element vorsortieren (links < Pivot-Elemnt | rechtes >= Pivot-Element
+     * 3) Neue PivotElemente links und rechts festlegen und erneut durchführen
+     * Wichtig: In Java bereits fertig implementiert (muss nicht mehr selbst programmiert werden)-> aufruf auf Array: arry.sort()
+     */
+
 
 }
 
