@@ -6,6 +6,7 @@ public class Sortieren {
      * Selection Sort (mit Minimum-Suche):
      * Hole jeweils das kleinste Element nach vorn:
      * Nutzt die Minimum-Suche!
+     * Stabilität: nicht stabil (siehe Anmerkung unten!!)
      */
 //Wichtig für Abschlussprüfung - Kodieren + Bestimmung Laufzeit
     public static void selectionSort(int[] array) {
@@ -39,6 +40,7 @@ public class Sortieren {
     /**
      * Bubble Sort:
      * große Zahlen wandern nach oben:
+     * Stabilität: stabil
      */
 
     public static void bubbleSort(int[] array) {
