@@ -3,6 +3,7 @@ public class Suchen {
     /** Lineare Suche
      * Laufzeit O(n)
      * Ist Wert in Menge enthalten?
+     * Wichtig: Die Position des Minimums im Array wird zurückgegeben, NICHT der Wert des Minimum!
      */
 
 
@@ -29,6 +30,7 @@ public class Suchen {
 
     /** Binäre Suche (Arrays.brinarySearch(...))
      * Laufzeit O(log² n)
+     * Ist bereits in Java implementiert -> liefert Position des gesuchten Wertes im Array zurück. Suchwert kann angegeben werden!
      */
 
 

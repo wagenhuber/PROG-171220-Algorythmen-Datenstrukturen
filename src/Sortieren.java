@@ -181,7 +181,7 @@ public class Sortieren {
      * 1) Aufteilen des Array anhand eines Pivot-Element (Wert in der Mitte)
      * 2) Werte im Vergleich zum Pivot-Element vorsortieren (links < Pivot-Elemnt | rechtes >= Pivot-Element
      * 3) Neue PivotElemente links und rechts festlegen und erneut durchführen
-     * Wichtig: In Java bereits fertig implementiert (muss nicht mehr selbst programmiert werden)-> aufruf auf Array: arry.sort()
+     * Wichtig: In Java bereits fertig implementiert (muss nicht mehr selbst programmiert werden)-> aufruf auf Array: Arrays.sort(array)
      */
 
 
