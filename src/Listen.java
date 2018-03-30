@@ -2,18 +2,38 @@ import java.util.*;
 
 public class Listen {
 
+
+    public static void ausgabeArray() {
+
+    }
+
+
+
     public static void main(String[] args) {
 
+
+        //ArrayList erstellen:
         ArrayList<Integer> liste = new ArrayList<Integer>(100);
+
+
+        //List erstellen
         List<Integer> liste2 = Arrays.asList(2, 5, 6, 7, 1, 22, 4, 4252, 25);
         List<String> liste3 = Arrays.asList("Anna", "Otto", "Benno");
+        List<String> list = new ArrayList<String>();
 
 
+        //Liste manuell befüllen
         System.out.println(liste.isEmpty());
         liste.add(4);
         liste.add(5);
         liste.add(0);
 
+
+        //Liste mit mehreren Werten befüllen
+        Collections.addAll(list, "b", "c", "d");
+
+
+        //Alle Elemente von Liste ausgeben
         for (Integer integer : liste) {
             System.out.println(integer + " ");
         }
@@ -24,6 +44,7 @@ public class Listen {
         }
 
 
+        //Element von Liste entfernen
         Iterator iterator = liste.iterator();
         while (iterator.hasNext()) {
             int i = (int) iterator.next();
@@ -32,17 +53,45 @@ public class Listen {
             }
         }
 
-        List<String> list = new ArrayList<String>();
-        Collections.addAll( list, "b", "c", "d" );
 
+        //Element zu Liste hinzufügen -> bestimmte Position mittels ListOperator
         ListIterator<String> it = list.listIterator();
-
         it.next();
-        it.add( "a" );                     // Vorne anfügen
-        System.out.println( list );        // [a, b, c, d]
+        it.add("a");                     // Vorne anfügen
+        System.out.println(list);        // [a, b, c, d]
 
-    }
 
+        //Prüfen ob Wert in Liste:
+        System.out.println(list.contains("d"));
+
+
+
+        //Liste nach Wert durchsuchen:
+        System.out.println(Arrays.binarySearch(list.toArray(), "c"));
+
+
+
+        //Liste sortieren:
+        System.out.println("Ausgabe ursprungsliste: " + liste2);
+
+
+        //Liste in Array umwandeln:
+        String[] namen = (String[]) liste3.toArray(new String[0]);
+        String[] namen2 = (String[]) liste3.toArray(new String[liste3.size()]);
+
+        System.out.println(namen.toString());
+
+
+
+
+        //Arrays.sort(liste2.toArray());
+        //System.out.println("Ausgabe sortierete Liste: " + liste2);
+
+
+
+
+
+    }//ende main
 
 
 }
