@@ -28,7 +28,7 @@ public class Suchen {
 
 
 
-    /** Binäre Suche (Arrays.brinarySearch(...))
+    /** Binäre Suche (Arrays.brinarySearch(...)) / = "Halbierungssuche" -> sehr effizient
      * Laufzeit O(log² n)
      * Ist bereits in Java implementiert -> liefert Position des gesuchten Wertes im Array zurück. Suchwert kann angegeben werden!
      */

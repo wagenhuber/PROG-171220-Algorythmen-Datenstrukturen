@@ -6,6 +6,10 @@ public class Sample_Listen {
     /**
      * "java.util.Collections" = Utiliy-Klasee -> bietet Methoden / allte Methoden sind statisch
      * "Collection" = Interface
+     *
+     * Collections -> Listen -> ArrayList / LinkedList
+     * Collections -> Sets -> HashSet / TreeSet
+     * Collections -> Maps -> HashMap (Key-Value-Store)
      */
 
 
@@ -64,6 +68,7 @@ public class Sample_Listen {
 
         //Liste nach Wert durchsuchen und dessen Position zurückgeben:
         System.out.println(Arrays.binarySearch(list.toArray(), "c"));
+
 
 
         //Minimumsuche mit Klasse "Collections"
