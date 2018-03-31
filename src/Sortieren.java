@@ -37,8 +37,12 @@ public class Sortieren {
     //Average Case: O(n²)
     //Worst Case: O(n²)
 
+    //Stabilität: nicht stabil
+
     //Analyse Speicher:
     //Konstant, nicht abhängig von der Länge des Arrays => O(1)
+
+
 
 
     /**
@@ -66,6 +70,8 @@ public class Sortieren {
     //Best Case: O(n)
     //Average Case: O(n²)
     //Worst Case: O(n²)
+
+    //Stabilität: stabil
 
     //Analyse Speicher:
     //Konstant, nicht abhängig von der Länge des Arrays => O(1)
@@ -98,6 +104,8 @@ public class Sortieren {
     //Best Case: O(n)
     //Average Case: O(n²)
     //Worst Case: O(n²)
+
+    //Stabilität: stabil
 
 
     //#####Bessere Sortieralgorythmen############
