@@ -108,24 +108,15 @@ public class Sortieren {
     //Stabilität: stabil
 
 
-    //#####Bessere Sortieralgorythmen############
-
-
+    //#####Bessere Sortieralgorythmen - Prinzip "Devide and Conquer############
     //Allgemein
     //=========
-
-
     /**Paradigma: Divide an Conquer (Teile und Behersche / Zusammensetzen)
      * 1) Aufteilen eines Problems in Teilprobleme (unsortierte Teilfolgen)
      * 2) Lösen (Beherschen) der Teilprobleme => Teillösungen (sortierte Teilsorgen)
      * 3) Zusammensetzen (Combine) der Teillösungen zur Gesamtlösung (sortierte Teilfolgen zu Gesamtfolge zusammensetzen)
      * Meist mit Rekursion
      */
-
-    //Analyse Laufzeit:
-    //mit MergeSort: alle Fälle O(n * log n) -> schnellste Sortierfunktion überhaupt!! ->  < (kleiner als) O(n²)
-
-
 
     //Schritt 2
 
@@ -148,12 +139,6 @@ public class Sortieren {
 
 
     //======================================================
-
-
-
-
-
-
 
 
 
@@ -192,15 +177,19 @@ public class Sortieren {
     }
 
     //Analyse Laufzeit:
-    //alle Fälle O(n * log n))
-    //stabil
+    //alle Fälle O(n * log n)) -> schnellste Sortierfunktion überhaupt!! ->  < (kleiner als) O(n²)
+
+    //Stabilität: stabil
 
     //Analyse Speicher:
     //zusätzlicher Platz O(n) -> hoher Speicherbedarf! -> sortieren von 1000 Werten -> Platzbedarf im Speicher für 2000 Werte!
 
-//Option Schritt 3 QuickSort:
 
 
+
+
+
+    //Option Schritt 3 QuickSort:
     /**QuickSort
      * 1) Aufteilen des Array anhand eines Pivot-Element (Wert in der Mitte)
      * 2) Werte im Vergleich zum Pivot-Element vorsortieren (links < Pivot-Elemnt | rechtes >= Pivot-Element
@@ -211,7 +200,10 @@ public class Sortieren {
     //Analyse Laufzeit:
     //BestCase O(n * log n)
     //WorstCase O(n²))
-    //nicht stabil
+
+    //Stabilität: nicht stabil
+
+
 
 
 
