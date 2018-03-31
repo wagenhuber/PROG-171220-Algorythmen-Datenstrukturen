@@ -53,9 +53,15 @@ public class Sample_Array {
 
 
         //Array aufsteigend sortieren und auf Console mittels liste ausgeben:
-        Collections.sort(Arrays.<Integer>asList(array2));
+        Arrays.sort(array2);
         List<Integer> newList2 = Arrays.asList(array2);
         System.out.println(newList2);
+
+
+
+
+
+
 
 
     }

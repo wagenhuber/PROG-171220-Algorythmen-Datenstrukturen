@@ -1,5 +1,9 @@
 public class Sortieren {
 
+    //Allgemein
+    //Angabe der Komplexität in der sog. "Landau-Notation"
+
+
     //Werte für Beipiel an Tafel: 18 / 3 / 42 / 28 / 42 / 8
 
     /**
@@ -99,6 +103,10 @@ public class Sortieren {
     //#####Bessere Sortieralgorythmen############
 
 
+    //Allgemein
+    //=========
+
+
     /**Paradigma: Divide an Conquer (Teile und Behersche / Zusammensetzen)
      * 1) Aufteilen eines Problems in Teilprobleme (unsortierte Teilfolgen)
      * 2) Lösen (Beherschen) der Teilprobleme => Teillösungen (sortierte Teilsorgen)
@@ -106,15 +114,12 @@ public class Sortieren {
      * Meist mit Rekursion
      */
 
-    /**MergeSort (Merge = Zusammensetzen)
-     * 1) Aufteilen des Array in neue, kleinere Arrays
-     * 2) Sortieren der Teil-Arrays und übergabe an MergeSort
-     * 3) Zusammensetzen der sortierenten Arrays zu einem neuem Array
-     */
+    //Analyse Laufzeit:
+    //mit MergeSort: alle Fälle O(n * log n) -> schnellste Sortierfunktion überhaupt!! ->  < (kleiner als) O(n²)
 
 
 
-//Schritt 2
+    //Schritt 2
 
     public static int[] sort(int[] a){
         int l = a.length / 2;
@@ -133,19 +138,26 @@ public class Sortieren {
 
     }
 
-    //Analyse Laufzeit:
-    //alle Fälle O(n * log n) -> schnellste Sortierfunktion überhaupt!! ->  < (kleiner als) O(n²)
 
-    //Analyse Speicher:
-    //zusätzlicher Platz O(n) -> hoher Speicherbedarf! -> sortieren von 1000 Werten -> Platzbedarf im Speicher für 2000 Werte!
-
-    //Anmerkung:
-    //Unterscheidung bei Sortieralgorythmen nach "stabil" vs. "nicht stabil"
-    //Stabil: Reihenfolge von Dupletten bleibt erhalten
-    //Nicht Stabil: Reihenfolge bleibt nicht erhalten! -> z.B. bei MergeSort!!!
+    //======================================================
 
 
-//Schritt 3 MergeSort:
+
+
+
+
+
+
+
+//Option Schritt 3 MergeSort:
+
+    /**MergeSort (Merge = Zusammensetzen)
+     * 1) Aufteilen des Array in neue, kleinere Arrays
+     * 2) Sortieren der Teil-Arrays und übergabe an MergeSort
+     * 3) Zusammensetzen der sortierenten Arrays zu einem neuem Array
+     */
+
+
 
     private static int[] merge(int[] a, int[] b){
         int[] c = new int[a.length + b.length];
@@ -171,10 +183,14 @@ public class Sortieren {
         return c;
     }
 
-//Analyse Laufzeit:
-    //alle Fälle O(n)
+    //Analyse Laufzeit:
+    //alle Fälle O(n * log n))
+    //stabil
 
+    //Analyse Speicher:
+    //zusätzlicher Platz O(n) -> hoher Speicherbedarf! -> sortieren von 1000 Werten -> Platzbedarf im Speicher für 2000 Werte!
 
+//Option Schritt 3 QuickSort:
 
 
     /**QuickSort
@@ -184,6 +200,19 @@ public class Sortieren {
      * Wichtig: In Java bereits fertig implementiert (muss nicht mehr selbst programmiert werden)-> aufruf auf Array: Arrays.sort(array)
      */
 
+    //Analyse Laufzeit:
+    //BestCase O(n * log n)
+    //WorstCase O(n²))
+    //nicht stabil
+
+
+
+
+    //Allgemein
+    //Anmerkung Stabilität:
+    //Unterscheidung bei Sortieralgorythmen nach "stabil" vs. "nicht stabil"
+    //Stabil: Reihenfolge von Dupletten bleibt erhalten
+    //Nicht Stabil: Reihenfolge bleibt nicht erhalten! -> z.B. bei MergeSort!!!
 
 }
 
