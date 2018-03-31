@@ -1,6 +1,12 @@
 import java.util.*;
 
-public class Listen {
+public class Sample_Listen {
+
+
+    /**
+     * "java.util.Collections" = Utiliy-Klasee -> bietet Methoden / allte Methoden sind statisch
+     * "Collection" = Interface
+     */
 
 
     public static void ausgabeArray() {
@@ -33,16 +39,6 @@ public class Listen {
         Collections.addAll(list, "b", "c", "d");
 
 
-        //Alle Elemente von Liste ausgeben
-        for (Integer integer : liste) {
-            System.out.println(integer + " ");
-        }
-
-
-        for (Integer integer : liste2) {
-            System.out.println(integer);
-        }
-
 
         //Element von Liste entfernen
         Iterator iterator = liste.iterator();
@@ -56,36 +52,39 @@ public class Listen {
 
         //Element zu Liste hinzufügen -> bestimmte Position mittels ListOperator
         ListIterator<String> it = list.listIterator();
-        it.next();
-        it.add("a");                     // Vorne anfügen
-        System.out.println(list);        // [a, b, c, d]
+        it.next();                      //eine Position nach vorne springen "von 0 -> 1 "
+        it.add("a");                     // an position 1 anfügen
+        System.out.println(list);        // [b, a, c, d]
 
 
-        //Prüfen ob Wert in Liste:
+
+        //Prüfen ob Wert in Liste - Rückgabe boolean:
         System.out.println(list.contains("d"));
 
 
-
-        //Liste nach Wert durchsuchen:
+        //Liste nach Wert durchsuchen und dessen Position zurückgeben:
         System.out.println(Arrays.binarySearch(list.toArray(), "c"));
 
 
+        //Minimumsuche mit Klasse "Collections"
+        System.out.println(Collections.min(liste2));
 
-        //Liste sortieren:
-        System.out.println("Ausgabe ursprungsliste: " + liste2);
+
+        //liste aufsteigend sortieren
+        Collections.sort(liste2);
+        System.out.println(liste2);
 
 
         //Liste in Array umwandeln:
         String[] namen = (String[]) liste3.toArray(new String[0]);
         String[] namen2 = (String[]) liste3.toArray(new String[liste3.size()]);
-
         System.out.println(namen.toString());
 
 
 
 
-        //Arrays.sort(liste2.toArray());
-        //System.out.println("Ausgabe sortierete Liste: " + liste2);
+
+
 
 
 
