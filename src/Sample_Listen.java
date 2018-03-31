@@ -66,7 +66,7 @@ public class Sample_Listen {
         System.out.println(list.contains("d"));
 
 
-        //Liste nach Wert durchsuchen und dessen Position zurückgeben:
+        //Liste nach spezifischen Wert durchsuchen mittels Binäre-Suche und dessen Position zurückgeben:
         System.out.println(Arrays.binarySearch(list.toArray(), "c"));
 
 
@@ -75,9 +75,11 @@ public class Sample_Listen {
         System.out.println(Collections.min(liste2));
 
 
+
         //liste aufsteigend sortieren
         Collections.sort(liste2);
         System.out.println(liste2);
+
 
 
         //Liste in Array umwandeln:
