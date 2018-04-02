@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -23,7 +24,7 @@ public class Quersumme {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         System.out.println("Bitte ganze Zahl eingeben: ");
         int eingabe = scanner.nextInt();
         scanner.close();
@@ -44,8 +45,17 @@ public class Quersumme {
         }
 
 
-        System.out.println("Die Quersumme lautet: " + quersumme);
+        System.out.println("Die Quersumme lautet: " + quersumme);*/
 
+
+        int zahl = 127;
+        int summe = 0;
+
+        while (zahl != 0) {
+            summe += (zahl % 10);
+            zahl = zahl / 10;
+        }
+        System.out.println(summe);
 
     }
 

@@ -43,6 +43,7 @@ public class Sample_Array {
 
 
         //Array in Liste umwandeln mittels Arrays.asList() Achtung geht nur mit Arrays von Wrapperklassen!
+        //Erklärung: TypPrüfung von Listen geht nur mit Objekten die Referenz besitzen!
         List<Integer> newList = Arrays.asList(array2);
         //Array auf Console ausgeben:
         System.out.println(newList);
@@ -50,6 +51,7 @@ public class Sample_Array {
 
         //Array in neues Array kopieren
         int[] array4 = array1.clone();
+
 
 
         //Array aufsteigend sortieren und auf Console mittels liste ausgeben:
