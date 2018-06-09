@@ -52,6 +52,9 @@ public class Sample_Array {
         //Array in neues Array kopieren
         int[] array4 = array1.clone();
 
+        //String[] aus String mit Trennzeichen erstellen mittels split()
+        String testText = "audi;a4;tdi";
+        String[] teile = testText.split(";");
 
 
         //Array aufsteigend sortieren und auf Console mittels liste ausgeben:
