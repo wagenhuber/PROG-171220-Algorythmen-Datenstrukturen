@@ -10,7 +10,7 @@ import java.util.List;
  * Länge kann abgefragt werden mit Length() -> gibt immer die Menge zurück, die im Element platz finden
  * <p>
  * <p>
- * Viele Funktion von Collections können mit Arrays verwendet werden!
+ * Viele Funktion von Utilityklasse "Collections" können mit Arrays verwendet werden!
  * Dazu muss mittels Arrays.asList() das Array in eine Liste kopiert werden
  * <p>
  * <p>
@@ -28,6 +28,9 @@ public class Sample_Array {
         int[] array3 = new int[2]; //Array mit Platz für 2 Elemente;
 
 
+
+
+        System.out.println(array1.length);
         System.out.println(array3.length);
         array3[0] = 0;
         array3[1] = 1;
@@ -39,7 +42,10 @@ public class Sample_Array {
 
 
         //Binäre-Suche nach spezischen Wert (Rückgabe Position) mittels Klasse Arrays
-        System.out.println(Arrays.binarySearch(array1, 3));
+        //Achtung: Array muss sortiert sein!
+        System.out.print("Binäre Suche:  ");
+        Arrays.sort(array1);
+        System.out.println(Arrays.binarySearch(array1, 2));
 
 
         //Array in Liste umwandeln mittels Arrays.asList() Achtung geht nur mit Arrays von Wrapperklassen!
@@ -58,11 +64,14 @@ public class Sample_Array {
 
 
         //Array aufsteigend sortieren und auf Console mittels liste ausgeben:
+        //Arrays.sort => QuickSort
         Arrays.sort(array2);
         List<Integer> newList2 = Arrays.asList(array2);
         System.out.println(newList2);
 
-
+        //Array aufsteigend sortieren
+        //Arrays.parallelSort => MergeSort
+        Arrays.parallelSort(array2);
 
 
 

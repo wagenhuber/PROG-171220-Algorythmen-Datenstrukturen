@@ -9,10 +9,10 @@ public class Tier {
 
     public Tier() {
 
-        privateText = "private";
-        publicText = "public";
-        protectedText = "protected";
-        paketsicher = "paketsicher";
+        privateText = "privateTier";
+        publicText = "publicTier";
+        protectedText = "protectedTier";
+        paketsicher = "paketsicherTier";
 
     }
 
@@ -54,6 +54,14 @@ public class Tier {
 
     public void tierMethode() {
         System.out.println("Ich bin nur ein Tier!");
+    }
+
+    public void tierMethode2() {
+        System.out.println("Ich bin nur ein Tier! (Methode2)");
+    }
+
+    private void tierMethode3() {
+        System.out.println("Ich bin nur ein Tier! (Methode3)");
     }
 
 }

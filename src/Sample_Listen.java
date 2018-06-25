@@ -26,6 +26,7 @@ public class Sample_Listen {
         ArrayList<Integer> liste = new ArrayList<Integer>(100);
 
 
+
         //List erstellen
         List<Integer> liste2 = Arrays.asList(2, 5, 6, 7, 1, 22, 4, 4252, 25);
         List<String> liste3 = Arrays.asList("Anna", "Otto", "Benno");
@@ -69,6 +70,9 @@ public class Sample_Listen {
         //Liste nach spezifischen Wert durchsuchen mittels Binäre-Suche und dessen Position zurückgeben:
         System.out.println(Arrays.binarySearch(list.toArray(), "c"));
 
+
+        //Liste nach spezifischen Wert durchsuchen mittels Binäre-Suche und dessen Position zurückgeben:
+        System.out.println("Binäre-Suche auf Liste: " + Collections.binarySearch(list,"c"));
 
 
         //Minimumsuche mit Klasse "Collections"

@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Taube extends Tier {
 
-    public String publicText = "publicTextvonKind";
-    private String privateText = "privateText";
+    public String publicText = "publicTaube";
+    private String privateText = "privateTaube";
 
     public void taubenMethode() {
         System.out.println("Ich bin ein Taube!");
@@ -33,43 +33,59 @@ public class Taube extends Tier {
         tierList.add(tier2);
         tierList.add(tier3); //Kindklasse wird automatisch auf Elternklasse gecastet
 
-
         taubeList.add(((Taube) tier2));//Elternklasse muss von Hand auf Kindklasse gecastet werden
 
-
-        //Datenfeld Elternklasse
+        //Zugriff auf Datenfelder
+        System.out.println("####Tier2: Datenfeld Elternklasse####");
         System.out.println(tier2.publicText);
-        //Datenfeld Kindklasse
+        System.out.println("####Tier2: Datenfeld Kindeklasse####");
         System.out.println(((Taube) tier2).publicText);
 
-        //Datenfeld Elternklasse
-        System.out.println(((Tier) tier3).publicText);
-        //Datenfeld Kindklasse
+        System.out.println();
+
+        System.out.println("####Tier3: Datenfeld Elternklasse####");
+        System.out.println(((Tier) tier3).publicText); //public Datenfeld existiert 2 Mal! In Parent und in Child!
+        System.out.println("####Tier3: Datenfeld Kindeklasse####");
         System.out.println(tier3.publicText);
 
-        //Vererbung von Methoden
-        tier3.taubenMethode();//besitzt Methode direkt
-        tier3.tierMethode();//wird geerbt
-        tier2.tierMethode();//nutzt direkt Methode der Kindklasse (wegen Konstrukturaufruf new Taube()
-        ((Taube) tier2).tierMethode();//Verhält sich als Tier und muss daher für Zugriff gecastet werden
-        System.out.println("#####");
-        ((Tier) tier2).tierMethode();//Es wird immer die Überschriebene Implemeniterung der Methode verwendet
-        System.out.println("#####");
-        tier1.tierMethode();
+        System.out.println();
 
-        System.out.println("ForEach von Tierliste:");
+
+        System.out.println("####Zugriff privates Datenfeld####");
+        System.out.println(tier1.getPrivateText()); //priv. Datenfeld existiert nur 1x bei Elternklasse
+        System.out.println(tier2.getPrivateText());
+        System.out.println(tier3.getPrivateText());
+
+        System.out.println();
+
+
+        //Vererbung von Methoden
+        System.out.println("####tier-methoden####");
+        tier1.tierMethode();
+        tier2.tierMethode();//nutzt direkt überschriebene Methode der Kindklasse (wegen Konstrukturaufruf new Taube()
+        ((Tier) tier2).tierMethode();//Trotz des CAST => Es wird trotzdem immer die Überschriebene Implemeniterung der Methode verwendet
+        tier3.tierMethode();//methode in Kindklasse überschrieben, diese wird immer genutzt
+
+        System.out.println();
+
+        System.out.println("####tauben-methoden####");
+        ((Taube) tier2).taubenMethode();//muss für Zugriff auf tauben-methode erst gecastet werden
+        tier3.taubenMethode();//besitzt Methode direkt
+
+        System.out.println();
+
+        System.out.println("####tier-methode2 (nicht überschrieben)####");
+        tier1.tierMethode2();
+        tier2.tierMethode2();
+        tier3.tierMethode2();
+
+        System.out.println();
+
+        System.out.println("####ForEach von Tierliste:####");
         for (Tier tier : tierList) {
             tier.tierMethode();
         }
 
-
-
-        //MyParentClass elternKindklasse = new MyParentChildClass();
-
-        //Datenfeld Kindklasse
-        //elternKindklasse.
-        //Datenfeld Elternklasse
-        //System.out.println(((MyParentClass) kindklasse).publicText);
 
 
     }

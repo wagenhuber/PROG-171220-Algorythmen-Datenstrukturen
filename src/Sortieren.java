@@ -14,7 +14,7 @@ public class Sortieren {
      */
 //Wichtig für Abschlussprüfung - Kodieren + Bestimmung Laufzeit
     public static void selectionSort(int[] array) {
-        int position;
+        int  position;
         int minimum;
         for (int i = 0; i < array.length - 1; i++) {
             minimum = array[i];
@@ -37,10 +37,11 @@ public class Sortieren {
     //Average Case: O(n²)
     //Worst Case: O(n²)
 
+    //Analyse Speicher: O(1) (Konstant, nicht abhängig von der Länge des Arrays)
+
     //Stabilität: nicht stabil
 
-    //Analyse Speicher:
-    //Konstant, nicht abhängig von der Länge des Arrays => O(1)
+
 
 
 
@@ -71,11 +72,9 @@ public class Sortieren {
     //Average Case: O(n²)
     //Worst Case: O(n²)
 
+    //Analyse Speicher: O(1) (Konstant, nicht abhängig von der Länge des Arrays)
+
     //Stabilität: stabil
-
-    //Analyse Speicher:
-    //Konstant, nicht abhängig von der Länge des Arrays => O(1)
-
 
 
 
@@ -104,6 +103,8 @@ public class Sortieren {
     //Best Case: O(n)
     //Average Case: O(n²)
     //Worst Case: O(n²)
+
+    //Analyse Speicher: O(1)
 
     //Stabilität: stabil
 
@@ -200,6 +201,8 @@ public class Sortieren {
     //Analyse Laufzeit:
     //BestCase O(n * log n)
     //WorstCase O(n²))
+
+    //Analyse Speicher: O(n * log n)
 
     //Stabilität: nicht stabil
 
